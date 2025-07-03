@@ -2,6 +2,7 @@
  
 > A standalone GUI application implementing DCI evaluation of dimensionality reduction in addition to a Bayesian optimisation method. 
 > Built with Python and PyInstaller. No installation required.
+> Data can be found in the Metabolights repository with unique identifier REQ20250618211289
  
 ---
 ## What This Does
