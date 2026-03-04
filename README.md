@@ -18,9 +18,9 @@
 ## Example: How to Process a Dataset
 ## With GUI
 
-1. Load a .mat saved in v7.3. Within the .mat, data should be saved as 'data', mzs should be saved as 'spectralChannels', and the mask should be saved as 'pixelSelection' within regionOfInterest saved as a struct. Otherwise, the relevant npy/csv files can be loaded.
+1. Load a .mat saved in v7.3. Within the .mat, data should be saved as 'data', mzs should be saved as 'spectralChannels', and the mask should be saved as 'pixelSelection' within regionOfInterest saved as a struct. Otherwise, the relevant npy/csv files can be loaded without need for a .mat.
 
-2. Produce a t-SNE embedding with the desired hyperparameters on the t-SNE page after 'Dimensionality Reduction'.
+2. Produce a t-SNE embedding with the desired hyperparameters on the t-SNE page after 'Dimensionality Reduction'. This produces an embedding .npy file.
 
 3. On the 'Open' page, load the embedding dictionary .npy file
 
@@ -32,7 +32,7 @@
 See Demo.py to see an example of basic use.
 1. Create a DataParser object by loading a .mat saved in v7.3. Within the .mat, data should be saved as 'data', mzs should be saved as 'spectralChannels', and the mask should be saved as 'pixelSelection' within regionOfInterest saved as a struct. Otherwise, the relevant npy/csv files can be loaded. The DataParser class will take mat_path to do this.
 
-2. Using the Dimensionality_Reduction class, produce a t-SNE embedding with the desired hyperparameters under the tSNE_creation() function. Descriptions of what each hyperparameter does can be found on the sklearn t-SNE docs. The transformed reduced representation and a dictionary containing the name of embedding, components, init, distance, perplexity, exaggeration, learning_rate, embedded data and mask is produced.
+2. Using the Dimensionality_Reduction class, produce a t-SNE embedding with the desired hyperparameters under the tSNE_creation() function. Descriptions of what each hyperparameter does can be found on the sklearn t-SNE docs. The transformed reduced representation and a dictionary containing the name of embedding, components, init, distance, perplexity, exaggeration, learning_rate, embedded data and mask is produced. This is saved as an embedding .npy file.
 
 3. Pass the DCI class the produced embedding and DataParser object, and call the dci function with the optional parameter sampling = 'cluster' or 'random', additionally change the optional parameters percentage or num_pixels to control the number of samples. The output of this function is the mutual information between high and low dimensional cophenetic distance matrices, a DCI results dictionary, an embedding image array (if n_components == 3) and a Matplotlib figure of cophenetic distance matrices.
 ---
