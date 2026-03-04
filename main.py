@@ -300,7 +300,8 @@ class MainWindow(QMainWindow):
         if not path:
             return
         if path.endswith(".npy"):
-            self.embedded_data = np.load(path, allow_pickle=True)
+            self.embedded_dict = np.load(path, allow_pickle=True)
+            self.embedded_data = self.embedded_dict[()]['embedded_data']
             self.emb_name = os.path.splitext(os.path.basename(path))[0]
             self.ui.loadmebeddingcsvedit.setText(path)
         if path.endswith(".csv"):
