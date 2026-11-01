@@ -1,8 +1,8 @@
 # Dimensional-Cophenetic-Integrity-DCI: A method for evaluating dimensionality reduction
  
 > A standalone GUI application implementing DCI evaluation of dimensionality reduction in addition to a Bayesian optimisation method. 
-> Data can be found in the Metabolights repository with unique identifier REQ20250618211289
-> This package is explained in detail in [Placeholder] and it is shown here for transparency purposes. Please cite this paper if you use this package
+> Data can be found in the Metabolights repository with unique identifier MTBLS14307
+> This package is explained in https://doi.org/10.1093/bioadv/vbag100 and it is shown here for transparency purposes. Please cite this paper if you use this package
  
 ---
 ## What This Does
@@ -36,7 +36,13 @@ See Demo.py to see an example of basic use.
 
 3. Pass the DCI class the produced embedding and DataParser object, and call the dci function with the optional parameter sampling = 'cluster' or 'random', additionally change the optional parameters percentage or num_pixels to control the number of samples. The output of this function is the mutual information between high and low dimensional cophenetic distance matrices, a DCI results dictionary, an embedding image array (if n_components == 3) and a Matplotlib figure of cophenetic distance matrices.
 ---
- Download
+
+## Cophenetic EMD
+This is an example .py in calculating the Earth Movers Distance (EMD) between two cophenetic distance matrices derived from two different high dimensional datasets.
+It loads two .mat files using the DataParser class, and calculates the pairwise cophenetic distance matrix from the high dimensional space using all datapoints.
+This can also be adapted to calculate the EMD between high and low dimensional cophenetic distance matrices by using the output matrices from the DCI class.
+
+## Download
  
 Download the latest release (.exe)
 No Python or installation needed.
