@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @author: Connor J Newstead
+#CJN
 """
 
 import os
